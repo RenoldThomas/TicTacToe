@@ -12,7 +12,14 @@ const gameboard = (function() {
         return false;
     };
 
-    return {getBoard, resetBoard, placeSymbol};
+    const displayBoard = () => {
+        const cells = document.querySelectorAll(".cell");
+        cells.forEach((cell, index) => {
+            cell.textContent = "" + board[index];
+        });
+    };
+
+    return {getBoard, resetBoard, placeSymbol, displayBoard};
 })();
 
 const Player = (name, symbol) => {
@@ -51,10 +58,10 @@ const gameMaster = (() => {
     };
 
     const playTurn = (index) => {
-        // if (!isGameActive || !gameboard.placeSymbol(index, currentPlayer.symbol)) 
         if (isGameActive) {
             gameboard.placeSymbol(index, currentPlayer.symbol);
             console.log(`Placed ${currentPlayer.symbol} in position ${index}`);
+            gameboard.displayBoard();
         } 
         else
             return;
@@ -75,5 +82,23 @@ const gameMaster = (() => {
         isGameActive = true;
     };
 
-    return {playTurn, resetGame};
+    const initializeGame = () => {
+        const cells = document.querySelectorAll(".cell");
+        cells.forEach((cell) => {
+            cell.addEventListener("click", () => {
+                if (isGameActive) {
+                    const index = cell.getAttribute("id");
+                    playTurn(index);
+                }
+            });
+        });
+        // gameboard.displayBoard();
+    };
+
+    return {playTurn, resetGame, initializeGame};
 })();
+
+// Initialize the game when the page loads
+document.addEventListener("DOMContentLoaded", () => {
+    gameMaster.initializeGame();
+});
