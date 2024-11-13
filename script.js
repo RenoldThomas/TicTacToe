@@ -58,6 +58,13 @@ const gameMaster = (() => {
     };
 
     const playTurn = (index) => {
+        let board = gameboard.getBoard();
+
+        if (board[index] != "") {
+            console.log("Choose a different cell. Cell taken.");
+            return;
+        }
+        
         if (isGameActive) {
             gameboard.placeSymbol(index, currentPlayer.symbol);
             console.log(`Placed ${currentPlayer.symbol} in position ${index}`);
