@@ -1,0 +1,19 @@
+.gameBoard {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
+    /* border: 2px solid black; */
+    align-items: center;
+    justify-content: center;
+}
+
+.cell {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    font-size: 2em;
+    border: 1px solid #333;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
