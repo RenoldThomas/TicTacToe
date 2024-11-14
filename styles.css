@@ -56,3 +56,24 @@ button {
     font-size: 32px;
     margin-bottom: 32px;
 }
+
+#start-button {
+    display: inline;
+}
+
+input {
+    margin-right: 16px;
+    margin-left: 8px;
+    background-color: transparent;
+    border: 1px solid #EFD686;
+    padding: 8px;
+    color: #EFD686;
+    border-radius: 5px;
+}
+
+#enterPlayerNames {
+    width: fit-content;
+    background-color: #2F3A5B;
+    border: 2px solid #EFD686;
+    color: #EFD686;
+}

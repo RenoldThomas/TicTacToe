@@ -27,12 +27,18 @@ const Player = (name, symbol) => {
 };
 
 const gameMaster = (() => {
-    const player1 = Player("Player 1", "X");
-    const player2 = Player("Player 2", "O");
+    let player1 = Player("Player 1", "X");
+    let player2 = Player("Player 2", "O");
     let currentPlayer = player1;
     let isGameActive = true;
 
     let display = document.querySelector("#displayText");
+
+    const setPlayerNames = (name1, name2) => {
+        player1.name = name1;
+        player2.name = name2;
+        display.textContent = `${currentPlayer.name}'s turn.`;
+    }
 
     const switchTurn = () => {
         if (currentPlayer === player1) {
@@ -115,10 +121,22 @@ const gameMaster = (() => {
         display.textContent = `${currentPlayer.name}'s turn.`;
     };
 
-    return {playTurn, resetGame, initializeGame};
+    return {setPlayerNames, playTurn, resetGame, initializeGame};
 })();
 
 // Initialize the game when the page loads
 document.addEventListener("DOMContentLoaded", () => {
     gameMaster.initializeGame();
+});
+
+document.querySelector("#newGameButton").addEventListener("click", () => {
+    enterPlayerNames.showModal();
+});
+
+document.querySelector("#start-button").addEventListener("click", () => {
+    const player1Input = document.querySelector("#player1").value || "Player 1";
+    const player2Input = document.querySelector("#player2").value || "Player 2";
+    gameMaster.setPlayerNames(player1Input, player2Input);
+    gameMaster.resetGame();
+    document.querySelector("#enterPlayerNames").close();
 });
