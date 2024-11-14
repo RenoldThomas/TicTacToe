@@ -51,3 +51,8 @@ button {
     margin: 16px auto;
 }
 
+#displayText {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 32px;
+}
