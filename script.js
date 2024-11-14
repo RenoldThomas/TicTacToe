@@ -32,6 +32,8 @@ const gameMaster = (() => {
     let currentPlayer = player1;
     let isGameActive = true;
 
+    let display = document.querySelector("#displayText");
+
     const switchTurn = () => {
         if (currentPlayer === player1) {
             currentPlayer = player2;
@@ -61,7 +63,7 @@ const gameMaster = (() => {
         let board = gameboard.getBoard();
 
         if (board[index] != "") {
-            console.log("Choose a different cell. Cell taken.");
+            display.textContent = `Choose a different cell. Cell taken. Still ${currentPlayer.name}'s turn.`;
             return;
         }
 
@@ -69,6 +71,7 @@ const gameMaster = (() => {
             gameboard.placeSymbol(index, currentPlayer.symbol);
             console.log(`Placed ${currentPlayer.symbol} in position ${index}`);
             gameboard.displayBoard();
+            display.textContent = "";
         } 
         else
             return;
@@ -77,9 +80,11 @@ const gameMaster = (() => {
         if (winner) {
             isGameActive = false;
             console.log(winner === "Draw" ? "It's a draw!" : `${currentPlayer.name} is the Winner!`);
+            display.textContent = (winner === "Draw" ? "It's a draw!" : `${currentPlayer.name} is the Winner!`);
         } 
         else {
             switchTurn();
+            display.textContent = `${currentPlayer.name}'s turn.`;
         }
     }
 
@@ -88,6 +93,7 @@ const gameMaster = (() => {
         currentPlayer = player1;
         isGameActive = true;
         gameboard.displayBoard();
+        display.textContent = `${currentPlayer.name}'s turn.`;
     };
 
     const initializeGame = () => {
@@ -105,6 +111,8 @@ const gameMaster = (() => {
         restart.addEventListener("click", () => {
             resetGame();
         });
+
+        display.textContent = `${currentPlayer.name}'s turn.`;
     };
 
     return {playTurn, resetGame, initializeGame};
