@@ -64,7 +64,7 @@ const gameMaster = (() => {
             console.log("Choose a different cell. Cell taken.");
             return;
         }
-        
+
         if (isGameActive) {
             gameboard.placeSymbol(index, currentPlayer.symbol);
             console.log(`Placed ${currentPlayer.symbol} in position ${index}`);
@@ -87,10 +87,12 @@ const gameMaster = (() => {
         gameboard.resetBoard();
         currentPlayer = player1;
         isGameActive = true;
+        gameboard.displayBoard();
     };
 
     const initializeGame = () => {
         const cells = document.querySelectorAll(".cell");
+        let restart = document.querySelector("#restartButton");
         cells.forEach((cell) => {
             cell.addEventListener("click", () => {
                 if (isGameActive) {
@@ -99,7 +101,10 @@ const gameMaster = (() => {
                 }
             });
         });
-        // gameboard.displayBoard();
+
+        restart.addEventListener("click", () => {
+            resetGame();
+        });
     };
 
     return {playTurn, resetGame, initializeGame};

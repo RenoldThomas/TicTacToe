@@ -1,9 +1,20 @@
+body {
+    background-color: #2F3A5B;
+    color: #EFD686;
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+}
+
 .gameBoard {
     display: grid;
     grid-template-columns: repeat(3, 150px);
     grid-template-rows: repeat(3, 150px);
     align-items: center;
     justify-content: center;;
+    gap: 2px;
 }
 
 .cell {
@@ -11,8 +22,20 @@
     justify-content: center;
     align-items: center;
     font-size: 2em;
-    border: 1px solid #333;
+    border: 2px solid #EFD686;
     width: 150px;
     height: 150px;
+    cursor: pointer;
+}   
+
+button {
+    background-color: transparent;
+    border: 1px solid #EFD686;
+    color: #EFD686;
+    width: 100px;
+    padding:12px 16px;
+    border-radius: 8px;
+    margin: 16px auto;
+    display: block;
     cursor: pointer;
 }
