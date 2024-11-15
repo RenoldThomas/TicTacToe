@@ -11,4 +11,4 @@ This project utilizes the following techniques and methods:
 
 Installation Instructions:
 
-You can access the game by running https://therealstealthwar.github.io/TicTacToe in the browser
+- You can access the game by running https://therealstealthwar.github.io/TicTacToe in the browser
