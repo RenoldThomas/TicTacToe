@@ -71,3 +71,9 @@ Potential future improvements could include:
 - Adjustable board size
 - Sound effects
 - Animations for wins/draws
+
+## Author
+Renold T (@renold)
+
+## Credits
+This project was created as part of The Odin Project curriculum (2021).
