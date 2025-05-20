@@ -3,15 +3,23 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- Ensures proper scaling on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to external stylesheet -->
     <link rel="stylesheet" href="styles.css">
     <title>Tic-Tac-Toe</title>
 </head>
 
 <body>
+    <!-- Main game title -->
     <h1>Tic-Tac-Toe</h1>
+    
+    <!-- Element to display game status messages -->
     <div id="displayText"></div>
+    
+    <!-- Game board container with 9 cells (0-8) -->
     <div class="gameBoard">
+        <!-- Each cell has a unique ID (0-8) for tracking game state -->
         <div class="cell" id="0"></div>
         <div class="cell" id="1"></div>
         <div class="cell" id="2"></div>
@@ -22,11 +30,16 @@
         <div class="cell" id="7"></div>
         <div class="cell" id="8"></div>
     </div>
+    
+    <!-- Container for game control buttons -->
     <div id="buttonFlexContainer">
+        <!-- Button to start a new game with new player names -->
         <button id="newGameButton">New Game</button>
+        <!-- Button to restart the current game with same players -->
         <button id="restartButton">Restart</button>
     </div>
 
+    <!-- Modal dialog for entering player names (hidden by default) -->
     <dialog id="enterPlayerNames">
         <label for="player1">Player 1</label>
         <input id="player1" type="text" placeholder="Enter name">
@@ -35,6 +48,7 @@
         <button id="start-button">Start</button>
     </dialog>
 
+    <!-- Link to JavaScript file (at the end for performance) -->
     <script src="script.js"></script>
 </body>
 

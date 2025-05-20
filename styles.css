@@ -1,79 +1,97 @@
+/* 
+ * TicTacToe Game Styles
+ * 
+ * This file contains all styling for the Tic-Tac-Toe game.
+ * Color palette: Dark blue background (#2F3A5B) with gold/yellow accents (#EFD686)
+ */
+
+/* Base body styling */
 body {
-    background-color: #2F3A5B;
-    color: #EFD686;
+    background-color: #2F3A5B; /* Dark blue background color */
+    color: #EFD686;            /* Gold/yellow text color */
 }
 
+/* Main game title */
 h1 {
-    font-size: 3em;
-    text-align: center;
+    font-size: 3em;            /* Large font size for the title */
+    text-align: center;        /* Center-align the title */
 }
 
+/* Game board container styling */
 .gameBoard {
-    display: grid;
-    grid-template-columns: repeat(3, 150px);
-    grid-template-rows: repeat(3, 150px);
-    align-items: center;
-    justify-content: center;;
-    gap: 2px;
+    display: grid;             /* Use CSS grid for the game board layout */
+    grid-template-columns: repeat(3, 150px);  /* 3 columns of 150px each */
+    grid-template-rows: repeat(3, 150px);     /* 3 rows of 150px each */
+    align-items: center;       /* Center items vertically */
+    justify-content: center;   /* Center board horizontally on page */
+    gap: 2px;                  /* Small gap between cells */
 }
 
+/* Individual cell styling */
 .cell {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-    border: 2px solid #EFD686;
-    width: 150px;
-    height: 150px;
-    cursor: pointer;
+    display: flex;             /* Use flexbox for centering content inside cells */
+    justify-content: center;   /* Center content horizontally */
+    align-items: center;       /* Center content vertically */
+    font-size: 2em;            /* Large font size for X and O symbols */
+    border: 2px solid #EFD686; /* Gold/yellow border */
+    width: 150px;              /* Fixed width for each cell */
+    height: 150px;             /* Fixed height for each cell */
+    cursor: pointer;           /* Hand cursor on hover */
 }   
 
+/* Hover effect for cells and buttons */
 .cell:hover,
 button:hover {
-    background-color: #404b6c;
+    background-color: #404b6c; /* Slightly lighter blue on hover */
 }
 
+/* Button styling */
 button {
-    background-color: transparent;
-    border: 1px solid #EFD686;
-    color: #EFD686;
-    width: 125px;
-    padding:12px 16px;
-    border-radius: 8px;
-    display: block;
-    cursor: pointer;
+    background-color: transparent; /* Transparent background */
+    border: 1px solid #EFD686;     /* Gold/yellow border */
+    color: #EFD686;                /* Gold/yellow text */
+    width: 125px;                  /* Fixed width for buttons */
+    padding:12px 16px;             /* Padding inside buttons */
+    border-radius: 8px;            /* Rounded corners */
+    display: block;                /* Block display for proper sizing */
+    cursor: pointer;               /* Hand cursor on hover */
 }
 
+/* Container for game control buttons */
 #buttonFlexContainer {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin: 16px auto;
+    display: flex;             /* Use flexbox for button layout */
+    justify-content: center;   /* Center buttons horizontally */
+    gap: 8px;                  /* Space between buttons */
+    margin: 16px auto;         /* Top/bottom margin and auto left/right */
 }
 
+/* Game status display text */
 #displayText {
-    text-align: center;
-    font-size: 32px;
-    margin-bottom: 32px;
+    text-align: center;        /* Center-align status messages */
+    font-size: 32px;           /* Large font size for visibility */
+    margin-bottom: 32px;       /* Space below the status message */
 }
 
+/* Start button styling inside the dialog */
 #start-button {
-    display: inline;
+    display: inline;           /* Inline display for positioning */
 }
 
+/* Input fields for player names */
 input {
-    margin-right: 16px;
-    margin-left: 8px;
-    background-color: transparent;
-    border: 1px solid #EFD686;
-    padding: 8px;
-    color: #EFD686;
-    border-radius: 5px;
+    margin-right: 16px;        /* Space to the right of inputs */
+    margin-left: 8px;          /* Space to the left of inputs */
+    background-color: transparent; /* Transparent background */
+    border: 1px solid #EFD686;     /* Gold/yellow border */
+    padding: 8px;                  /* Padding inside inputs */
+    color: #EFD686;                /* Gold/yellow text */
+    border-radius: 5px;            /* Slightly rounded corners */
 }
 
+/* Dialog/modal styling for player name entry */
 #enterPlayerNames {
-    width: fit-content;
-    background-color: #2F3A5B;
-    border: 2px solid #EFD686;
-    color: #EFD686;
+    width: fit-content;           /* Size based on content */
+    background-color: #2F3A5B;    /* Match main background */
+    border: 2px solid #EFD686;    /* Gold/yellow border */
+    color: #EFD686;               /* Gold/yellow text */
 }
